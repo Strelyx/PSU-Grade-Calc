@@ -332,34 +332,73 @@ function getSubjectVariable(name)
 var sumTime = 0;
 var sumGPA = 0;
 
+var gradeTable = [
+    {grade:"A",unit:4,hasTime:true},
+    {grade:"B+",unit:3.5,hasTime:true},
+    {grade:"B",unit:3,hasTime:true},
+    {grade:"C+",unit:2.5,hasTime:true},
+    {grade:"C",unit:2,hasTime:true},
+    {grade:"D+",unit:1.5,hasTime:true},
+    {grade:"D",unit:1,hasTime:true},
+    {grade:"E",unit:0,hasTime:true},
+    {grade:"Withdrawn",unit:0,hasTime:false},
+    {grade:"ไม่ลงทะเบียน",unit:0,hasTime:false},
+    {grade:"",unit:0,hasTime:false}
+]
+
+var units = [0,0]
+var timeUnits = [0,0]
+
 function calculateGpa()
 {
     for(let i=0;i<subject.length; i++)
     {
-        if(subject[i].grade == "A"){
-            sumTime += subject[i].time;
-            sumGPA += 4;
-        }else if(subject[i].grade == "B+"){
-            sumTime += subject[i].time;
-            sumGPA += 3.5;
-        }else if(subject[i].grade == "B"){
-            sumTime += subject[i].time;
-            sumGPA += 3;
-        }else if(subject[i].grade == "C+"){
-            sumTime += subject[i].time;
-            sumGPA += 2.5;
-        }else if(subject[i].grade == "C"){
-            sumTime += subject[i].time;
-            sumGPA += 2;
-        }else if(subject[i].grade == "D+"){
-            sumTime += subject[i].time;
-            sumGPA += 1.5;
-        }else if(subject[i].grade == "D"){
-            sumTime += subject[i].time;
-            sumGPA += 1;
-        }else if(subject[i].grade == "E"){
-            sumTime += subject[i].time;
-            sumGPA += 0;
+        if(subject[i].name == "eng-1"){
+            for(let j=0;j<gradeTable.length;j++){
+                if(subject[i].grade == gradeTable[j].grade){
+                    if(gradeTable[j].hasTime){
+                        timeUnits[0] += subject[i].time;
+                        units[0] += (subject[i].time * gradeTable[j].unit);
+                    }
+                    break;
+                }
+            }
+        }else if(subject[i].name == "eng-2"){
+            for(let j=0;j<gradeTable.length;j++){
+                if(subject[i].grade == gradeTable[j].grade){
+                    if(gradeTable[j].hasTime){
+                        timeUnits[1] += subject[i].time;
+                        units[1] += (subject[i].time * gradeTable[j].unit);
+                    }
+                    break;
+                }
+            }
+        }else{
+            for(let j=0;j<gradeTable.length;j++){
+                if(subject[i].grade == gradeTable[j].grade){
+                    if(gradeTable[j].hasTime){
+                        sumTime += subject[i].time;
+                        sumGPA += (subject[i].time * gradeTable[j].unit);
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
+    if(units[0] > units[1]){
+        sumTime += timeUnits[0];
+        sumGPA += units[0];
+    }else if(units[0] < units[1]){
+        sumTime += timeUnits[1];
+        sumGPA += units[1];
+    }else{
+        if(timeUnits[0] <= timeUnits[1]){
+            sumTime += timeUnits[0];
+            sumGPA += units[0];
+        }else{
+            sumTime += timeUnits[1];
+            sumGPA += units[1];
         }
     }
 
@@ -371,4 +410,6 @@ function calculateGpa()
         document.getElementById('gpa').innerHTML = (sumGPA/sumTime).toFixed(2);
     
     sumTime = 0; sumGPA = 0;
+    units[0] = 0; units[1] = 0;
+    timeUnits[0] = 0; timeUnits[1] = 0;
 }
