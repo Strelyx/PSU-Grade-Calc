@@ -30,6 +30,12 @@
             background: #1f1f1f;
             cursor: pointer;
         }
+        .md-005:hover{
+            background: #3f3f3f;
+        }
+        .md-005:active{
+            background: #2f2f2f;
+        }
         .centerY{
             position: absolute;
             top: 50%;
@@ -49,6 +55,17 @@
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
+        .selected-grade{
+            border: none;
+            width: 95%;
+            height: 35px;
+            font-family: 'Kanit', sans-serif;
+            font-size: 16px;
+            align-self: center;
+        }
+        .selected-grade:active{
+            border: none;
+        }
     </style>
     <title>Grade Assign</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -66,7 +83,7 @@
                         <span> section </span>
                         <span id='section_status'>. . . . .</span>
                     </div>
-                    <div style="width=100%; height: 5px; background: #1f1f1f; margin-top: 1%; margin-bottom: 1%;"></div>
+                    <div style="width:100%; height: 5px; background: #1f1f1f; margin-top: 1%; margin-bottom: 1%;"></div>
                     <table class="ubuntu md-004">
                         <tr style="height: 48px;">
                             <td class="round-corner md-005" onclick="onGroupSelect('A')">A</td>
@@ -95,15 +112,15 @@
                 
                 <!--table-->
                 <div class="round-corner md-002" style="padding: 1%;">
-                    <table style="width: 100%; border-spacing: 10px;">
+                    <table style="width: 100%; border-spacing: 10px;" id="report_table">
                         <tr style="text-align: center; height: 45px; font-size: 20px;" class="kanit">
                             <td style="width: 15%;" class="md-003 round-corner" colspan="2">รหัสวิชา</td>
-                            <td style="width: 55%;" class="md-003 round-corner">ชื่อวิชา</td>
-                            <td style="width: 10%;" class="md-003 round-corner">หน่วยกิต</td>
+                            <td style="width: 50%;" class="md-003 round-corner">ชื่อวิชา</td>
+                            <td style="width: 15%;" class="md-003 round-corner">หน่วยกิต</td>
                             <td style="width: 20%;" class="md-003 round-corner">ผลการเรียน</td>
                         </tr>
                         <tr>
-                            <td style="width: 100%; padding-left: 0%; height: 25px; position: relative;" class="md-003 round-corner" colspan="5">
+                            <td style="width: 100%; padding-left: 0%; height: 25px; position: relative;" class="md-003 round-corner" colspan="5" id="termOne">
                                 <div class="material-icons centerY">expand_more</div>
                                 <div class="centerY kanit" style="margin-left: 25px; font-size: 14px;">เทอม 1</div>
                             </td>
@@ -111,12 +128,26 @@
                         <tr style="text-align: center; height: 35px; position: relative;">
                             <td style="width: 2%;">&nbsp;</td>
                             <td style="width: 13%;  font-size: 16px;" class="md-003 round-corner ubuntu">200-101</td>
-                            <td style="width: 55%;  font-size: 16px;" class="md-003 round-corner ubuntu">INTRO TO ENGINEERING</td>
-                            <td style="width: 10%;  font-size: 16px;" class="md-003 round-corner ubuntu">1</td>
-                            <td style="width: 20%;  font-size: 16px;" class="md-003 round-corner kanit">ไม่ลงทะเบียน</td>
+                            <td style="width: 50%;  font-size: 16px;" class="md-003 round-corner ubuntu">INTRO TO ENGINEERING</td>
+                            <td style="width: 15%;  font-size: 16px;" class="md-003 round-corner ubuntu">1</td>
+                            <td style="width: 20%;  font-size: 16px;" class="md-003 round-corner kanit">
+                                <select class="selected-grade kanit" onchange="onNotHover(this)" onmouseover="">
+                                    <option selected disabled value="disable"></option>
+                                    <option value="A">A</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B">B</option>
+                                    <option value="C+">C+</option>
+                                    <option value="C">C</option>
+                                    <option value="D+">D+</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="W">Withdrawn</option>
+                                    <option value="">ไม่ลงทะเบียน</option>
+                                </select>
+                            </td>
                         </tr>
                         
-                        <tr>
+                        <tr id="termTwo">
                             <td style="width: 100%; padding-left: 0%; height: 25px; position: relative;" class="md-003 round-corner" colspan="5">
                                 <div class="material-icons centerY">expand_more</div>
                                 <div class="centerY kanit" style="margin-left: 25px; font-size: 14px;">เทอม 2</div>
@@ -125,8 +156,8 @@
                         <tr style="text-align: center; height: 35px">
                             <td style="width: 2%;">&nbsp;</td>
                             <td style="width: 13%;" class="md-003 round-corner">รหัสวิชา</td>
-                            <td style="width: 55%;" class="md-003 round-corner">ชื่อวิชา</td>
-                            <td style="width: 10%;" class="md-003 round-corner">หน่วยกิต</td>
+                            <td style="width: 50%;" class="md-003 round-corner">ชื่อวิชา</td>
+                            <td style="width: 15%;" class="md-003 round-corner">หน่วยกิต</td>
                             <td style="width: 20%;" class="md-003 round-corner">ผลการเรียน</td>
                         </tr>
                     </table>
