@@ -143,6 +143,7 @@ function onNotHover(element)
         element.removeChild(element.childNodes[0]);
     }
     element.appendChild(div);
+    calculateGpa();
 }
 
 function setUpTable(isUpper)
@@ -330,10 +331,6 @@ function getSubjectVariable(name)
 
 var sumTime = 0;
 var sumGPA = 0;
-function loadDoc()
-{
-    setInterval(calculateGpa, 1)
-}
 
 function calculateGpa()
 {
