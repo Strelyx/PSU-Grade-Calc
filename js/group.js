@@ -327,3 +327,51 @@ function getSubjectVariable(name)
     else if(name == "240-101" || name == "242-101") return "intro-com"
     return ""
 }
+
+var sumTime = 0;
+var sumGPA = 0;
+function loadDoc()
+{
+    setInterval(calculateGpa, 1)
+}
+
+function calculateGpa()
+{
+    for(let i=0;i<subject.length; i++)
+    {
+        if(subject[i].grade == "A"){
+            sumTime += subject[i].time;
+            sumGPA += 4;
+        }else if(subject[i].grade == "B+"){
+            sumTime += subject[i].time;
+            sumGPA += 3.5;
+        }else if(subject[i].grade == "B"){
+            sumTime += subject[i].time;
+            sumGPA += 3;
+        }else if(subject[i].grade == "C+"){
+            sumTime += subject[i].time;
+            sumGPA += 2.5;
+        }else if(subject[i].grade == "C"){
+            sumTime += subject[i].time;
+            sumGPA += 2;
+        }else if(subject[i].grade == "D+"){
+            sumTime += subject[i].time;
+            sumGPA += 1.5;
+        }else if(subject[i].grade == "D"){
+            sumTime += subject[i].time;
+            sumGPA += 1;
+        }else if(subject[i].grade == "E"){
+            sumTime += subject[i].time;
+            sumGPA += 0;
+        }
+    }
+
+    document.getElementById('timeTable').innerHTML = sumTime;
+
+    if(sumTime == 0)
+        document.getElementById('gpa').innerHTML = "0.00";
+    else
+        document.getElementById('gpa').innerHTML = (sumGPA/sumTime).toFixed(2);
+    
+    sumTime = 0; sumGPA = 0;
+}
