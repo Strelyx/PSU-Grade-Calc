@@ -70,10 +70,13 @@
             border: none;
         }
     </style>
-    <title>Grade Assign</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Ubuntu&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="js/group.js"></script>
+    <head>
+        <title>Grade Assign</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Ubuntu&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="js/group.js"></script>
+        <script type="text/javascript" src="js/gpa.js"></script>
+    </head>
     <body style="background: rgb(8, 84, 66)">
         <div>
             <div class="md-001">
@@ -145,6 +148,19 @@
                         </tr>
                     </table>
                 </div>
+
+                <!--grade summarize-->
+                <div class="round-corner md-002" style="padding: 1.5%;">
+                    <div class="round-corner md-003" style="height: 35px; display: flex; font-size: 20px;">
+                        <div style="width: 90%; padding-left: 1%; margin-top: 2px;" class="kanit">หน่วยกิตของคุณ : </div>
+                        <div style="width: 10%; padding-right: 1%; text-align: right; margin-top: 6px;" class="ubuntu" id="timeTable">0</div>
+                    </div>
+                    <div class="round-corner md-003" style="height: 35px; display: flex; font-size: 20px; margin-top: 1%;">
+                        <div style="width: 90%; padding-left: 1%; margin-top: 2px;" class="kanit">GPA : </div>
+                        <div style="width: 10%; padding-right: 1%; text-align: right; margin-top: 6px;" class="ubuntu" id="gpa">0.00</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </body>
