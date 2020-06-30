@@ -314,7 +314,7 @@ function getSubjectVariable(name)
 {
     if(name == "215-111" || name == "216-111") return "drawing"
     else if(name == "221-101" || name == "220-102") return "mecha"
-    else if(name == "322-172") return "math"
+    else if(name == "322-172") return "math-2"
     else if(name == "324-103") return "chem"
     else if(name == "325-103") return "lab-chem"
     else if(name == "332-104") return "phy-2"
