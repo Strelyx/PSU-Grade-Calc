@@ -378,7 +378,7 @@ function calculateGpa()
 
     if(units[0] >= units[1]){
         sumGPA += units[0];
-    }else if(units[0] < units[1]){
+    }else{
         sumGPA += units[1];
     }
 
