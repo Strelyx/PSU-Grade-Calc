@@ -1,171 +1,265 @@
 <html>
-	<style>
-		@media (min-width: 480px){
-		}
-		.md-001{
-			width: 85%;
-			margin: 0 auto;
-			background: #e6e6e6;
-			padding: 2%;
-		}
-		.md-002{
-			background: #bbbbbb;
-			margin: 0 auto;
-			margin-bottom: 2%;
-			padding: 2%
-		}
-		.md-003{
-			background: white;
-		}
-		.md-004{
-			width: 90%;
-			margin: 0 auto;
-			text-align: center;
-			border-spacing: 10px;
-			color: white;
-			font-size: 18px;
-		}
-		.md-005{
-			width: 10%;
-			background: #1f1f1f;
-			cursor: pointer;
-		}
-		.md-005:hover{
-			background: #3f3f3f;
-		}
-		.md-005:active{
-			background: #2f2f2f;
-		}
-		.md-006{
-			background: #f4f4f4;
-		}
-		.centerY{
-			position: absolute;
-			top: 50%;
-			margin: 0;
-			transform: translateY(-50%);
-			-ms-transform: translateY(-50%);
-		}
-		.ubuntu{
-			font-family: 'Ubuntu', sans-serif;
-		}
-		.kanit{
-			font-family: 'Kanit', sans-serif;
-		}
-		.round-corner{
-			border-bottom-left-radius: 5px;
-			border-bottom-right-radius: 5px;
-			border-top-left-radius: 5px;
-			border-top-right-radius: 5px;
-		}
-		.selected-grade{
-			border: none;
-			width: 95%;
-			height: 35px;
-			font-family: 'Kanit', sans-serif;
-			font-size: 16px;
-			align-self: center;
-		}
-		.selected-grade:active{
-			border: none;
-		}
-	</style>
 	<head>
 		<title>Grade Assign</title>
+		<link href="css/doc.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&family=Ubuntu&display=swap" rel="stylesheet">
-		<script type="text/javascript" src="js/group.js"></script>
-		<script type="text/javascript" src="js/gpa.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="js/variable.js"></script>
+		<script type="text/javascript" src="js/calc.js"></script>
+		<script type="text/javascript" src="js/grade_select.js"></script>
 	</head>
-	<body style="background: rgb(32, 32, 32)">
+	<body>
 		<div>
 			<div class="md-001">
-
-				<!--header-->
-				<div class="round-corner md-002">
-					<div class="kanit" style="font-size: 28px;">
-						<span>คุณอยู่กรุ๊ป </span>
-						<span id='group_status'>. . . . .</span>
-						<span> section </span>
-						<span id='section_status'>. . . . .</span>
-					</div>
-					<div style="width:100%; height: 5px; background: #1f1f1f; margin-top: 1%; margin-bottom: 1%;"></div>
-					<table class="ubuntu md-004">
-						<tr style="height: 48px;">
-							<td class="round-corner md-005" onclick="onGroupSelect('A')">A</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('B')">B</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('C')">C</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('D')">D</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('E')">E</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('F')">F</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('G')">G</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('H')">H</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('I')">I</td>
-						</tr>
-						<tr style="height: 48px;">
-							<td class="round-corner md-005" onclick="onGroupSelect('J')">J</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('K')">K</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('L')">L</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('M')">M</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('N')">N</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('O')">O</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('P')">P</td>
-							<td class="round-corner md-005" onclick="onGroupSelect('Q')">Q</td>
-							<td style="width: 10%;">&nbsp;</td>
-						</tr>
-					</table>
-				</div>
 				
 				<!--table-->
-				<div class="round-corner md-002" style="padding: 1%;">
-					<table style="width: 100%; border-spacing: 10px;" id="report_table">
-						<tr style="text-align: center; height: 45px; font-size: 20px;" class="kanit">
+				<div class="header">
+					<table class="table-grade" id="table-grade">
+						<tr class="table-header">
 							<td style="width: 15%;" class="md-003 round-corner" colspan="2">รหัสวิชา</td>
 							<td style="width: 50%;" class="md-003 round-corner">ชื่อวิชา</td>
 							<td style="width: 15%;" class="md-003 round-corner">หน่วยกิต</td>
 							<td style="width: 20%;" class="md-003 round-corner">ผลการเรียน</td>
 						</tr>
+						<!--engineer-->
 						<tr>
-							<td style="width: 100%; padding-left: 0%; height: 25px; position: relative;" class="md-003 round-corner" colspan="5" id="termOne">
-								<div class="material-icons centerY">expand_more</div>
-								<div class="centerY kanit" style="margin-left: 25px; font-size: 14px;">เทอม 1</div>
+							<td class="seperator" colspan="5">
+								<div class="material-icons centerY" style="width: 24px;">expand_more</div>
+								<div class="centerY" style="margin-left: 25px; font-size: 14px;">คณะวิศวกรรมศาสตร์</div>
 							</td>
 						</tr>
-						<tr style="text-align: center; height: 70px; position: relative;">
+						<tr style="text-align: center; height: 35px; position: relative;">
 							<td style="width: 2%;">&nbsp;</td>
-							<td style="width:98%; color: #363636;" colspan="4" class="md-006 round-corner kanit">คุณยังไม่เลือกกรุ๊ป</td>
-						</tr>
-						
-						<tr id="termTwo">
-							<td style="width: 100%; padding-left: 0%; height: 25px; position: relative;" class="md-003 round-corner" colspan="5">
-								<div class="material-icons centerY">expand_more</div>
-								<div class="centerY kanit" style="margin-left: 25px; font-size: 14px;">เทอม 2</div>
+							<td style="width: 13%;" class="cell">200-101</td>
+							<td style="width: 50%;" class="cell">INTRO TO ENGINEERING</td>
+							<td style="width: 15%;" class="cell">1</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
 							</td>
 						</tr>
-						<tr style="text-align: center; height: 70px" position: relative;>
+						<tr style="text-align: center; height: 35px; position: relative;">
 							<td style="width: 2%;">&nbsp;</td>
-							<td style="width:98%; color: #363636;" colspan="4" class="md-006 round-corner kanit">คุณยังไม่เลือกกรุ๊ป</td>
+							<td style="width: 13%;" class="cell">240-101</td>
+							<td style="width: 50%;" class="cell">INTRO TO COMPUTER PROGRAM</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">216-111</td>
+							<td style="width: 50%;" class="cell">ENGINEERING DRAWING</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">220-102</td>
+							<td style="width: 50%;" class="cell">ENGINEERING MECHANICS I</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<!--science-->
+						<tr>
+							<td class="seperator" colspan="5">
+								<div class="material-icons centerY">expand_more</div>
+								<div class="centerY" style="margin-left: 25px; font-size: 14px;">คณะวิทยาศาสตร์</div>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">322-171</td>
+							<td style="width: 50%;" class="cell">PHYSICAL SCIENCE MATH I</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">322-172</td>
+							<td style="width: 50%;" class="cell">PHYSICAL SCIENCE MATH II</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">332-103</td>
+							<td style="width: 50%;" class="cell">PHYSICS FOR ENGINEERING I</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">332-104</td>
+							<td style="width: 50%;" class="cell">PHYSICS FOR ENGINEERING II</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">332-113</td>
+							<td style="width: 50%;" class="cell">PHYSICS LAB FOR ENGINEERING I</td>
+							<td style="width: 15%;" class="cell">1</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">332-114</td>
+							<td style="width: 50%;" class="cell">PHYSICS LAB FOR ENGINEERING II</td>
+							<td style="width: 15%;" class="cell">1</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">324-103</td>
+							<td style="width: 50%;" class="cell">GENERAL CHEMISTRY</td>
+							<td style="width: 15%;" class="cell">3</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">325-103</td>
+							<td style="width: 50%;" class="cell">GENERAL CHEMISTRY LAB</td>
+							<td style="width: 15%;" class="cell">1</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<!--art-->
+						<tr>
+							<td class="seperator" colspan="5">
+								<div class="material-icons centerY">expand_more</div>
+								<div class="centerY" style="margin-left: 25px; font-size: 14px;">คณะศิลปาศาสตร์</div>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">890-00A</td>
+							<td style="width: 50%;" class="cell">รายวิชาภาษาอังกฤษ เทอม 1</td>
+							<td style="width: 15%;" class="cell">2</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr style="text-align: center; height: 35px; position: relative;">
+							<td style="width: 2%;">&nbsp;</td>
+							<td style="width: 13%;" class="cell">890-00B</td>
+							<td style="width: 50%;" class="cell">รายวิชาภาษาอังกฤษ เทอม 2</td>
+							<td style="width: 15%;" class="cell">2</td>
+							<td style="width: 20%;" class="cell">
+								<table class="grade_select" style="width: 100%;">
+									<tr style="display: flex;">
+										<td style="width: 90%; text-align: center;"></td>
+										<td class="material-icons" style="width: 24px;">expand_more</td>
+									</tr>
+								</table>
+							</td>
 						</tr>
 					</table>
 				</div>
 
 				<!--grade summarize-->
-				<div class="round-corner md-002" style="padding: 1.5%;">
-					<div class="round-corner md-003" style="height: 35px; display: flex; font-size: 20px;">
-						<div style="width: 90%; padding-left: 1%; margin-top: 2px;" class="kanit">หน่วยกิตของคุณ : </div>
-						<div style="width: 10%; padding-right: 1%; text-align: right; margin-top: 6px;" class="ubuntu" id="timeTable">30</div>
-					</div>
-					<div class="round-corner md-003" style="height: 35px; display: flex; font-size: 20px; margin-top: 1%;">
-						<div style="width: 90%; padding-left: 1%; margin-top: 2px;" class="kanit">GPA : </div>
-						<div style="width: 10%; padding-right: 1%; text-align: right; margin-top: 6px;" class="ubuntu" id="gpa">0.00</div>
-					</div>
+				<div class="header" id="div-gpa">
+					<table style="border-spacing: 10px; width: 100%;">
+						<tr style="height: 45px;">
+							<td class="cell" style="width: 80%; font-weight: 400; padding-left: 1%; font-size: 20px;">หน่วยกิตเข้าภาค:</td>
+							<td class="cell" style="font-weight: 500; text-align: right; padding-right: 1%; font-size: 20px;">30</td>
+						</tr>
+						<tr style="height: 45px;">
+							<td class="cell" style="width: 80%; font-weight: 400; padding-left: 1%; font-size: 20px;">เกรดเฉลี่ยเข้าภาค:</td>
+							<td class="cell" style="font-weight: 500; text-align: right; padding-right: 1%; font-size: 20px;">0.00</td>
+						</tr>
+					</table>
 				</div>
 
 				<!--another summarize-->
 				<div class="round-corner md-002" style="padding: 1.5%;">
 					<div class="round-corner md-003" style="font-size: 20px; display:flex;">
-						<div style="width: 15%; padding-left: 1%; margin-top: 2px;" class="kanit">ต้องการเข้าสาขา : </div>
-						<select class="kanit" style="width: 85%;" onselect="">
+						<div style="width: 20%; padding-left: 1%; margin-top: 2px;">ต้องการเข้าสาขา : </div>
+						<select style="width: 80%;" onchange="selectSubject(this)">
 							<option selected disabled value=""></option>
 							<option value="ce">วิศวกรรมโยธา</option>
 							<option value="me">วิศวกรรมเครื่องกล</option>
