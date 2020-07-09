@@ -6,6 +6,33 @@ body {
     position: relative;
 }
 
+header {
+    width: 100%;
+    background: rgb(126,24,22);
+    background: linear-gradient(0deg, rgba(126,24,22,1) 0%, rgba(188,34,34,1) 100%);
+    font-family: 'CSChatThaiUI';
+    font-size: 10px;
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+}
+
+footer {
+    margin-top: 2.5%;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    font-family: 'CSChatThaiUI';
+    font-size: 14px;
+    color: white;
+    position: relative;
+    padding: 0;
+    display: block;
+    border-top: 2px solid #ffffff;
+    text-align: center;
+    height: 40px;
+}
+
 .md-001{
     width: 85%;
     margin: 0 auto;
@@ -191,4 +218,19 @@ body {
 
 .grade_choice:active {
     background-color: rgb(40, 40, 40);
+}
+
+.first-header {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+}
+
+@font-face {
+    font-family: "CSChatThaiUI";
+    src: url("../fonts/CSChatThai/CSChatThaiUI.ttf");
+}
+
+.first-header #web-link {
+    height: 40px;
+    font-family: 'CSChatThaiUI';
 }
