@@ -23,9 +23,9 @@ function measureGrade(char)
     if(char == "A") return 4;
     else if(char == "B+") return 3.5;
     else if(char == "B") return 3;
-    else if(char == "C") return 2.5;
-    else if(char == "D+") return 2;
-    else if(char == "D") return 1.5;
-    else if(char == "E") return 1;
+    else if(char == "C+") return 2.5;
+    else if(char == "C") return 2;
+    else if(char == "D+") return 1.5;
+    else if(char == "D") return 1;
     return 0;
 }
