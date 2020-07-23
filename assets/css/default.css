@@ -1,0 +1,111 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.inner-shell {
+    margin: 0 auto;
+    border-style: dashed;
+    width: 96%;
+}
+
+.sub-inner-shell {
+    margin: 0 auto;
+    border-style: dashed;
+    width: 98%;
+}
+
+.section {
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin: 0 auto;
+}
+
+.section h1 {
+    font-weight: 600;
+    font-size: 2.5vmax;
+    margin: 0;
+    margin-left: 1.5%;
+}
+
+.round-corner {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.seperate {
+    width: 98%;
+    background-color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 0.5vh;
+    margin: 0 auto;
+}
+
+.grade-table {
+    margin-top: 0.8%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.first-row {
+    display: flex;
+    width: 100%;
+}
+
+.first-row div {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: white;
+    font-weight: 500;
+    font-size: 1.6vmax;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    text-align: center;
+}
+
+.subject-row {
+    margin-top: 1%;
+}
+
+.subject-group {
+    background: white;
+    display: flex;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1vmax;
+}
+
+.subject-group .material-icons{
+    margin-left: 0.75%;
+    font-size: 1.5vmax;
+}
+
+.information-row {
+    display: flex;
+    font-weight: 300;
+    margin-top: 0.5%;
+}
+
+.information-row div {
+    padding-top: 0.3%;
+    padding-bottom: 0.3%;
+    text-align: center;
+}
+
+.cell {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: white;
+}

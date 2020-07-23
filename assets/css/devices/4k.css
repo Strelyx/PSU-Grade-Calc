@@ -1,0 +1,71 @@
+.main-part {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+.id-col {
+    display: block;
+    width: 9.5%;
+}
+
+.name-col {
+    display: block;
+    width: 59%;
+    margin-left: 1%;
+}
+
+.time-col {
+    display: block;
+    width: 9%;
+    margin-left: 1%;
+}
+
+.subject-col {
+    display: none;
+}
+
+.grade-col {
+    display: block;
+    width: 20%;
+    margin-left: 1%;
+}
+
+.subject-cell {
+    display: none;
+}
+
+.id-cell {
+    display: block;
+    width: 7.5%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: white;
+}
+
+.name-cell {
+    display: block;
+    width: 59%;
+    margin-left: 1%;
+}
+
+.time-cell {
+    display: block;
+    width: 9%;
+    margin-left: 1%;
+}
+
+.grade-cell {
+    display: block;
+    width: 20%;
+    margin-left: 1%;
+}
+
+.eng {
+    background: red;
+    width: 1%;
+    margin-left: 1%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

@@ -1,0 +1,63 @@
+.main-part {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+.id-col {
+    display: none;
+}
+
+.name-col {
+    display: none;
+}
+
+.time-col {
+    display: none;
+}
+
+.subject-col {
+    display: block;
+    width: 74%;
+}
+
+.grade-col {
+    display: block;
+    width: 25%;
+    margin-left: 1%;
+}
+
+.subject-cell {
+    display: flex;
+    width: 74%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: white;
+}
+
+.id-cell {
+    display: none;
+}
+
+.name-cell {
+    display: none;
+}
+
+.time-cell {
+    display: none;
+}
+
+.grade-cell {
+    display: block;
+    width: 25%;
+    margin-left: 1%;
+}
+
+.eng {
+    background: red;
+    width: 1.5%;
+    margin-left: 1%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

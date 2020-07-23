@@ -1,300 +1,52 @@
 <html>
-	<head>
-		<title>คณะวิศวกรรมศาสตร์ มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่ - คำนวณเกรดเข้าภาค</title>
-		<link rel="icon" href="https://www.eng.psu.ac.th/templates/t3_bs3_blank/favicon.ico" sizes="16x16" type="image/png">
-		<link href="css/doc.css" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
-		<script type="text/javascript" src="js/variable.js"></script>
-		<script type="text/javascript" src="js/calc.js"></script>
-		<script type="text/javascript" src="js/grade_select.js"></script>
-	</head>
-	<div style="width:100%; height: 30px; position: fixed; z-index: 998; background-color: rgba(188,34,34,1);">
-	</div>
-	<header>
-		<div class="first-header" style="border-bottom: solid 1px #911616; height: 30px;"></div>
-		<div class="first-header" style="border-bottom: solid 1px #AB2828; height: 128px;">
-			<table style="width: 100%;height: 128px;">
-				<tr>
-					<td>
-						<a href="https://www.eng.psu.ac.th" data-target="#">
-							<img src="https://www.eng.psu.ac.th//templates/t3_bs3_blank//images/site/eng-logo.png" alt="คณะวิศวกรรมศาสตร์ มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่">
-						</a>
-					</td>
-					<td>
-						
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="first-header" id="web-link">
-			<table style="height: 40px; color: white;">
-				<tr>
-					<td class="material-icons" style="margin-top: 5px;">home</td>
-					<td class="material-icons" style="margin-top: 5px;">keyboard_arrow_right</td>
-					<td>
-						<a style="color:white; text-decoration: none;" href="https://www.eng.psu.ac.th" data-target="#">ENG</a>
-					</td>
-					<td class="material-icons" style="margin-top: 5px;">keyboard_arrow_right</td>
-					<td>
-						<a style="color:white; text-decoration: none;" href="https://sis.psu.ac.th" data-target="#">SiS</a>
-					</td>
-					<td class="material-icons" style="margin-top: 5px;">keyboard_arrow_right</td>
-					<td style="text-decoration: underline;">คำนวณเกรดเข้าภาค</td>
-				</tr>
-			</table>
-		</div>
-	</header>
-	<body style="position: relative;">
-		<div>
-			<div class="md-001 round-corner" style="margin-top: 2.5%;">
-				
-				<!--table-->
-				<div class="header">
-					<table class="table-grade" id="table-grade">
-						<tr class="table-header">
-							<td style="width: 15%;" class="md-003 round-corner" colspan="2">รหัสวิชา</td>
-							<td style="width: 50%;" class="md-003 round-corner">ชื่อวิชา</td>
-							<td style="width: 15%;" class="md-003 round-corner">หน่วยกิต</td>
-							<td style="width: 20%;" class="md-003 round-corner">ผลการเรียน</td>
-						</tr>
-						<!--engineer-->
-						<tr>
-							<td class="seperator" colspan="5">
-								<div class="material-icons centerY" style="width: 24px;">expand_more</div>
-								<div class="centerY" style="margin-left: 25px; font-size: 14px;">คณะวิศวกรรมศาสตร์</div>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">200-101</td>
-							<td style="width: 50%;" class="cell">INTRO TO ENGINEERING</td>
-							<td style="width: 15%;" class="cell">1</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">240-101</td>
-							<td style="width: 50%;" class="cell">INTRO TO COMPUTER PROGRAM</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">216-111</td>
-							<td style="width: 50%;" class="cell">ENGINEERING DRAWING</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">220-102</td>
-							<td style="width: 50%;" class="cell">ENGINEERING MECHANICS I</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<!--science-->
-						<tr>
-							<td class="seperator" colspan="5">
-								<div class="material-icons centerY">expand_more</div>
-								<div class="centerY" style="margin-left: 25px; font-size: 14px;">คณะวิทยาศาสตร์</div>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">322-171</td>
-							<td style="width: 50%;" class="cell">PHYSICAL SCIENCE MATH I</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">322-172</td>
-							<td style="width: 50%;" class="cell">PHYSICAL SCIENCE MATH II</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">332-103</td>
-							<td style="width: 50%;" class="cell">PHYSICS FOR ENGINEERING I</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">332-104</td>
-							<td style="width: 50%;" class="cell">PHYSICS FOR ENGINEERING II</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">332-113</td>
-							<td style="width: 50%;" class="cell">PHYSICS LAB FOR ENGINEERING I</td>
-							<td style="width: 15%;" class="cell">1</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">332-114</td>
-							<td style="width: 50%;" class="cell">PHYSICS LAB FOR ENGINEERING II</td>
-							<td style="width: 15%;" class="cell">1</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">324-103</td>
-							<td style="width: 50%;" class="cell">GENERAL CHEMISTRY</td>
-							<td style="width: 15%;" class="cell">3</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">325-103</td>
-							<td style="width: 50%;" class="cell">GENERAL CHEMISTRY LAB</td>
-							<td style="width: 15%;" class="cell">1</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<!--art-->
-						<tr>
-							<td class="seperator" colspan="5">
-								<div class="material-icons centerY">expand_more</div>
-								<div class="centerY" style="margin-left: 25px; font-size: 14px;">คณะศิลปาศาสตร์</div>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">890-00A</td>
-							<td style="width: 50%;" class="cell">รายวิชาภาษาอังกฤษ เทอม 1</td>
-							<td style="width: 15%;" class="cell">2</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr style="text-align: center; height: 35px; position: relative;">
-							<td style="width: 2%;">&nbsp;</td>
-							<td style="width: 13%;" class="cell">890-00B</td>
-							<td style="width: 50%;" class="cell">รายวิชาภาษาอังกฤษ เทอม 2</td>
-							<td style="width: 15%;" class="cell">2</td>
-							<td style="width: 20%;" class="cell">
-								<table class="grade_select" style="width: 100%;">
-									<tr style="display: flex;">
-										<td style="width: 90%; text-align: center;"></td>
-										<td class="material-icons" style="width: 24px;">expand_more</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-				</div>
-
-				<!--grade summarize-->
-				<div class="header" id="div-gpa">
-					<table style="border-spacing: 10px; width: 100%;">
-						<tr style="height: 45px;">
-							<td class="cell" style="width: 80%; font-weight: 400; padding-left: 1%; font-size: 20px;">หน่วยกิตเข้าภาค:</td>
-							<td class="cell" style="font-weight: 500; text-align: right; padding-right: 1%; font-size: 20px;">30</td>
-						</tr>
-						<tr style="height: 45px;">
-							<td class="cell" style="width: 80%; font-weight: 400; padding-left: 1%; font-size: 20px;">เกรดเฉลี่ยเข้าภาค:</td>
-							<td class="cell" style="font-weight: 500; text-align: right; padding-right: 1%; font-size: 20px;">0.00</td>
-						</tr>
-					</table>
-				</div>
-
-				<!--another summarize-->
-				
-			</div>
-		</div>
-	</body>
+    <head>
+        <title>PSU</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="assets/css/default.css" rel="stylesheet">
+        <link href="assets/css/devices/4k.css" rel="stylesheet" media="screen and (min-width: 426px)">
+        <link href="assets/css/devices/mobile-large.css" rel="stylesheet" media="screen and (max-width: 425px)">
+    </head>
+    <body>
+        <div>
+            <div class="main-part" style="background: white;">
+                <div class="inner-shell">
+                    <div class="section round-corner" style="background: rgb(200, 200, 200);">
+                        <div class="sub-inner-shell">
+                            <h1>ผลการเรียน</h1>
+                            <div class="seperate"></div>
+                            <div class="round-corner grade-table">
+                                <div class="first-row">
+                                    <div class="id-col">รหัสวิชา</div>
+                                    <div class="name-col">ชื่อวิชา</div>
+                                    <div class="time-col">หน่วยกิต</div>
+                                    <div class="subject-col">รายวิชา</div>
+                                    <div class="grade-col">ผลการเรียน</div>
+                                </div>
+                                <div class="subject-row">
+                                    <div class="subject-group round-corner">
+                                        <div class="material-icons">expand_more</div>
+                                        <div>คณะวิศวกรรมศาสตร์</div>
+                                    </div>
+                                    <div class="information-row">
+                                        <div class="eng"></div>
+                                        <div class="id-cell">200-101</div>
+                                        <div class="name-cell cell">INTRO TO ENGINEERING</div>
+                                        <div class="time-cell cell">1</div>
+                                        <div class="subject-cell">
+                                            <div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="grade-cell cell"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
